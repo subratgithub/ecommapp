@@ -9,7 +9,7 @@ pipeline {
 
     triggers {
         // This is for GitHub webhook (not polling)
-        // Make sure the webhook is configured in GitHub repo settings
+        // Make sure the webhook is configured in GitHub repo settings.
         githubPush()
     }
 
