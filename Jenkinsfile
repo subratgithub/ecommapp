@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        TARGET_HOST = '13.232.47.49'
+        TARGET_HOST = '100.31.93.207'
         SSH_USER = 'ec2-user'
-        SSH_CREDENTIALS_ID = 'ssh-access-key'
+        SSH_CREDENTIALS_ID = 'ssh_jenkin'
     }
 
     triggers {
@@ -16,7 +16,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/chinabudhi123/project-1.git'
+                git branch: 'main', url: 'https://github.com/subratgithub/ecommapp.git'
             }
         }
 
