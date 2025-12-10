@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        TARGET_HOST = '98.93.80.85'
+        TARGET_HOST = '100.31.93.207'
         SSH_USER = 'ec2-user'
-        SSH_CREDENTIALS_ID = 'jenkins_ssh_key'
+        SSH_CREDENTIALS_ID = 'ssh_jenkin'
     }
 
     triggers {
