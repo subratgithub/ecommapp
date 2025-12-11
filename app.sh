@@ -1,18 +1,21 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
+
 echo "🚀 Starting Apache deployment on Amazon Linux 2023..."
 
-# Update packages
-sudo dnf update -y
+# Install httpd (Apache)
+sudo dnf -y install httpd
 
-# Install Apache (httpd)
-sudo dnf install -y httpd
+# Ensure httpd is enabled and started
+sudo systemctl enable --now httpd
 
-# Enable and start Apache service
-sudo systemctl enable httpd
-sudo systemctl start httpd
+# Deploy static files to the webroot
+sudo mkdir -p /var/www/html
+# Copy any html files from /home/ec2-user/app to the webroot
+sudo cp -r /home/ec2-user/app/*.html /var/www/html/ || true
 
-# Deploy the webpage
-sudo cp /home/ec2-user/app/index.html /var/www/html/
+# Fix ownership so Apache can serve files
+sudo chown -R apache:apache /var/www/html
 
 echo "✅ Apache deployed! Visit your EC2 IP to view the webpage."
 
