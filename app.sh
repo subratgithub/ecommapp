@@ -1,5 +1,4 @@
 #!/bin/bash
-
 echo "🚀 Starting Apache deployment on Amazon Linux 2023..."
 
 # Update packages
