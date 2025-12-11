@@ -1,6 +1,3 @@
-#!/usr/bin/env bash
-set -euo pipefail
-
 echo "🚀 Starting Apache deployment on Amazon Linux 2023..."
 
 # Install httpd (Apache)
